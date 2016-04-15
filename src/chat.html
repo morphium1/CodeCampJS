@@ -1,0 +1,29 @@
+<template>
+    <section class="au-animate">
+    <h2>${heading}</h2>
+    <form role="form" submit.delegate="submit()">
+        <ul class="list-group">
+        <div class="form-group">
+            <label>Channel</label>
+            <select value.bind="channel">
+                <option repeat.for="channel of channels" value.bind="channel">${channel}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="ln">Sender</label>
+            <input type="text" value.bind="sender" class="form-control" id="ln" placeholder="sender" validate.bind="validation">
+        </div>
+        <div class="form-group">
+            <label for="ln">Message</label>
+            <input type="text" value.bind="message" disabled.bind="!sender" class="form-control" id="ln" placeholder="message" validate.bind="validation">
+        </div>
+        <button type="submit" class="btn btn-default" disabled.bind="!validation.result.isValid">Submit</button>
+        </ul>
+        <div class="panel panel-${message.style}" repeat.for="message of messages" value.bind="message">
+            <div  class="panel-heading">From: ${message.sender} to channel ${message.channel}</div>
+            <div class="panel-body">${message.text}</div>
+        </div>
+
+    </form>
+        </section>
+</template>

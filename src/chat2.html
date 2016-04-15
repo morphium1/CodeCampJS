@@ -1,0 +1,16 @@
+<template>
+    <require from="channel-selector"></require>
+    <require from="new-message"></require>
+    <require from="message-list"></require>
+    <section class="au-animate">
+        <h2>${heading}</h2>
+        <div>
+            <div class="list-group">
+                <channel-selector channel.two-way="channel"></channel-selector>
+                <new-message message.two-way="message" on-save.call="saveMessages(message)" channel.bind="channel"></new-message>
+
+            </div>
+            <message-list messages.bind="messages"></message-list>
+        </div>
+    </section>
+</template>

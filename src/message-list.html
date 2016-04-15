@@ -1,0 +1,6 @@
+<template>
+    <div class="panel panel-${message.channel}" repeat.for="message of messages" value.bind="message">
+        <div class="panel-heading">From: ${message.sender} to channel ${message.channel}</div>
+        <div class="panel-body">${message.text}</div>
+    </div>
+</template>

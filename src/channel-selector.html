@@ -1,0 +1,8 @@
+<template>
+    <div class="form-group">
+        <label>Channel</label>
+        <select value.bind="channel">
+            <option repeat.for="channel of channels" value.bind="channel">${channel}</option>
+        </select>
+    </div>
+</template>
