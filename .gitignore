@@ -1,0 +1,9 @@
+build/
+jspm_packages/
+skeletons/
+node_modules/
+
+## File-based project format
+*.ipr
+*.iml
+*.iws
