@@ -6,11 +6,11 @@
         <h2>${heading}</h2>
         <div>
             <div class="list-group">
-                <channel-selector channel.two-way="channel"></channel-selector>
-                <new-message message.two-way="message" on-save.call="saveMessages(message)" channel.bind="channel"></new-message>
+                <channel-selector channel.two-way="chatModel.channel"></channel-selector>
+                <new-message  on-save.call="chatModel.addMessage(message)" channel.bind="chatModel.channel"></new-message>
 
             </div>
-            <message-list messages.bind="messages"></message-list>
+            <message-list messages.bind="chatModel.messages"></message-list>
         </div>
     </section>
 </template>

@@ -1,6 +1,7 @@
 <template>
-    <div class="panel panel-${message.channel}" repeat.for="message of messages" value.bind="message">
-        <div class="panel-heading">From: ${message.sender} to channel ${message.channel}</div>
-        <div class="panel-body">${message.text}</div>
+    <input type="text" value.bind="maxMessages" class="form-control" id="ln">
+    <div class="panel panel-${message.channel}" repeat.for="message of messages | sort | slice:3" value.bind="message">
+        <div class="panel-heading">${message.id} ${message.creationTimestamp} From: ${message.sender} to channel ${message.channel}</div>
+        <div class="panel-body">${message.message}</div>
     </div>
 </template>

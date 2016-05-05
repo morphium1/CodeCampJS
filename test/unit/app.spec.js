@@ -25,7 +25,7 @@ describe('the App module', () => {
   });
 
   it('configures the router title', () => {
-    expect(sut.router.title).toEqual('Aurelia');
+    expect(sut.router.title).toEqual('My-Awesome-Aurelia');
   });
 
   it('should have a welcome route', () => {

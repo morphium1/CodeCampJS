@@ -4,6 +4,6 @@ import {bindable} from 'aurelia-framework';
  */
 export class ChannelSelector {
     @bindable
-    channel;
-    channels = ["info","warning","danger"];
+    channel = "default";
+    channels = ["default","info","warning","danger"];
 }

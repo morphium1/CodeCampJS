@@ -4,30 +4,30 @@ import {Validation} from 'aurelia-validation';
 @inject(Validation)
 export class NewMessage {
     @bindable
-    message;
-    @bindable
     onSave;
     @bindable
     channel;
     sender;
-    text;
+    message;
+    maxMessages=10;
 
     constructor(validation) {
         this.validation = validation.on(this)
             .ensure('sender')
             .isNotEmpty()
             .isEmail()
-            .ensure('text')
+            .ensure('message')
             .isNotEmpty()
             .hasMinLength(3)
             .hasMaxLength(30) ;
     }
 
     submit() {
+        console.log("submit called!!!")
         this.validation.validate()
             .then(() => this.onSave({message :{ channel : this.channel,
                                       sender : this.sender,
-                                      text : this.text}}));
+                                      message : this.message}}));
     }
 
 
